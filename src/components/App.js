@@ -18,8 +18,8 @@ const items = [
 
 const App = () => {
   return (
-    <div>
-      <h1>Widget App</h1>
+    <div className="ui container">
+      <h1 className="ui header">Widget App</h1>
       <Accordion items={items} />
     </div>
   );
