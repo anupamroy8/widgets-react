@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 // import Accordion from "./Accordion";
 // import Search from "./Search";
 import Dropdown from "./Dropdown";
 
-const items = [
-  {
-    title: "What is React?",
-    content: "React is a front end javascript framework",
-  },
-  {
-    title: "Why use React?",
-    content: "React is a favorite JS library among engineers",
-  },
-  {
-    title: "How do you use React?",
-    content: "You use React by creating components",
-  },
-];
+// const items = [
+//   {
+//     title: "What is React?",
+//     content: "React is a front end javascript framework",
+//   },
+//   {
+//     title: "Why use React?",
+//     content: "React is a favorite JS library among engineers",
+//   },
+//   {
+//     title: "How do you use React?",
+//     content: "You use React by creating components",
+//   },
+// ];
 
 const options = [
   {
@@ -31,15 +31,29 @@ const options = [
     label: "The Color Blue",
     value: "blue",
   },
+  {
+    label: "The Color Magenta",
+    value: "magenta",
+  },
+  {
+    label: "The Color Orange",
+    value: "orange",
+  },
 ];
 
 const App = () => {
+  const [selected, setSelected] = useState(options[0]);
+
   return (
     <div className="ui container">
       {/* <h1 className="ui header">Widget App</h1>
       <Accordion items={items} />
       <Search /> */}
-      <Dropdown options={options} />
+      <Dropdown
+        onSelectedChange={setSelected}
+        selected={selected}
+        options={options}
+      />
     </div>
   );
 };
